@@ -1,0 +1,22 @@
+#/bin/bash
+
+## call the disconnect function ##
+
+# NOTE: 
+# ewwii's call-fns command can only call commands within "main.rhai"
+# if you want to call a function outside of "main.rhai", 
+# then the recommended way to do it is by making a wrapper function in "main.rhai"
+# that would then call the function from the externalmodule.
+ewwii call-fns "disconnect_wifi()" --config .
+
+## update the widgets ##
+
+# get the new net_info that we will inject
+nmcli dev wifi rescan
+NEW_NET_INFO=$(nmcli -t -f SSID,SIGNAL,SECURITY dev wifi)
+
+# IMPORTANT:
+# ewwii's "update"" command is a bit risky to use in certain cases as it resets all
+# poll/listen variables. But, since we only use 1 poll variable, it is a bit easy 
+# for us as we can just fetch the value for our variable and then inject it in.
+ewwii update -w "wifi_gui" --inject-vars net_info="$NEW_NET_INFO" --config .

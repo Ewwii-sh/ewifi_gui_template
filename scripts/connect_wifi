@@ -1,0 +1,8 @@
+#/bin/bash
+
+ssid=$1
+password=$2
+
+echo "$ssid"
+
+ewwii call-fns "connect_to_wifi($ssid, $password)" --config .
