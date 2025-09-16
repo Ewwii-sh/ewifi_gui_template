@@ -7,7 +7,7 @@ This is a simple, easy-to-use Wi-Fi manager template for **Ewwii**, made for Lin
 Just run the following command and have the template ready in the current working directory!
 
 ```bash
-$ eiipm install ewifi_gui_template
+$ eiipm i ewifi_gui_template
 ```
 
 ## Screenshot
