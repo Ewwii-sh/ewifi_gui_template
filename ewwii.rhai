@@ -123,6 +123,7 @@ enter([
             height: "400px",
             anchor: "center" 
         },
+        force_normal: true
     }, user_interface(net_info)),
 
     defwindow("password_dialog", #{
