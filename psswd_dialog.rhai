@@ -24,7 +24,7 @@ fn dialog_ui() {
             password: true,
             // the input widget exposes a `INPUT_VAL` env variable
             // to the command in onaccept and onchange properties.
-            onaccept: "scripts/connect_wifi \"" + ssid_to_connect + "\" \"$INPUT_VAL\"",
+            onaccept: "scripts/connect_wifi \"" + ssid_to_connect + "\" {}",
         })
     ])
 }
